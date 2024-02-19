@@ -25,7 +25,8 @@ const products = [
       count: 56,
     },
     price: 799, // in cents
-  },
+    },
+  
 ];
 
 let productsHtml = "";
