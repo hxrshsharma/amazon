@@ -1,3 +1,4 @@
+import { cart } from "../data/cart.js";
 let productsHtml = "";
 products.forEach((product) => {
   const html = `  <div class="product-container">
@@ -6,7 +7,7 @@ products.forEach((product) => {
               class="product-image"
               src="${product.image}"
             />
-          </div>
+          </div> 
           <div class="product-name limit-text-to-2-lines">
            ${product.name}
           </div>
@@ -26,8 +27,8 @@ products.forEach((product) => {
           )}</div>
 
           <div class="product-quantity-container">
-            <select>
-              <option selected value="1">1</option>
+            <select id="js-qty">
+              <option value="1">1</option>
               <option value="2">2</option>
               <option value="3">3</option>
               <option value="4">4</option>
@@ -73,6 +74,9 @@ document.querySelectorAll(".js-add-to-cart").forEach((button) => {
         quantity: 1,
       });
     }
+    
+    
+
     let cartQuantity = 0;
     cart.forEach((item) => {
       cartQuantity += item.quantity;
