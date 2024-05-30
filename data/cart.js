@@ -1,7 +1,7 @@
-export let cart = JSON.parse(localStorage.getItem('cart'));
+export let cart = JSON.parse(localStorage.getItem("cart"));
 
 if (!cart) {
-    cart = []
+  cart = [];
 }
 
 function storage() {
@@ -21,9 +21,10 @@ export function addToCart(productId) {
     cart.push({
       productId: productId,
       quantity: 1,
+      deliveryOptionId: "1",
     });
-    }
-    storage();
+  }
+  storage();
 }
 
 export function removeFromCart(productId) {
@@ -33,6 +34,6 @@ export function removeFromCart(productId) {
       newCart.push(cartItem);
     }
   });
-    cart = newCart;
-    storage();
+  cart = newCart;
+  storage();
 }
